@@ -1,0 +1,70 @@
+@mixin drop-shadow($r) {
+  -webkit-box-shadow: $r $r 0px $r rgba(0,0,0,0.75);
+  -moz-box-shadow: $r $r 0px $r rgba(0,0,0,0.75);
+  box-shadow: $r $r 0px $r rgba(0,0,0,0.75);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.quote-box {
+  border: 1px solid;
+  border-radius: 5px;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  padding: 10px;
+  height: 200px;
+  position: relative;
+}
+
+.author {
+  margin: 5px;
+  text-align: right;
+}
+
+button {
+  outline: none;
+  border: 1px solid;
+  border-radius: 5px;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 5px;
+  margin: 5px;
+  @include drop-shadow(2px)
+  &:hover {
+    outline: none;
+    margin-top: 6px;
+    margin-left: 6px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    @include drop-shadow(1px)
+  }
+  &:active {
+    outline: none;
+    margin-top: 7px;
+    margin-left: 7px;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    @include drop-shadow(0px)
+  }
+}
+
+.button-holder {
+  overflow: auto;
+  display: block;
+  position: absolute;
+  bottom: 12px;
+}
+
+.button-holder button {
+  float: left;
+  display: block;
+}
