@@ -23,7 +23,7 @@ export const getNewQuote = (quoteId) => async (dispatch) => {
     if (newQuoteId === quoteId) {
       newQuoteId = (newQuoteId + 1) % totalQuotes;
     }
-    const url = `http://quotes.stormconsultancy.co.uk/quotes/${newQuoteId}.json`;
+    const url = `https://quotes.stormconsultancy.co.uk/quotes/${newQuoteId}.json`;
     const response = await axios.get(url);
     if (response.status === 200) {
       console.log(response);
